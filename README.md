@@ -2,7 +2,7 @@
 
 Swift Library for better prints and to log prints.
 
-# Features and usage:
+# Usage
 
 The source code is well documented, for some help here is some example usage:
 
@@ -52,17 +52,17 @@ This library should be used by Swift apps/programs that needs better printing ma
 
 This code should work for almost any platform/target that has the Swift Foundation library or any equivalent one that's named the same, and that provvides the same basic types and functionalities.
 
-# About the project:
+# About the project
 
 This code was created as part of my TINU project (https://github.com/ITzTravelInTime/TINU) and has been separated and made into it's own library to make the main project's source less complex and more focused on it's aim. 
 
 Also having this as it's own library allows for code to be updated separately and so various versions of the main TINU app will be able to be compiled all with the latest version of this library.
 
-# Credits:
+# Credits
 
  - ITzTravelInTime (Pietro Caruso) - Project creator
 
-# Contacts:
+# Contacts
 
  - ITzTravelInTime (Pietro Caruso): piecaruso97@gmail.com
 
