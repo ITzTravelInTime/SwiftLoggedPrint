@@ -4,7 +4,7 @@ Swift Library for better prints and to log prints.
 
 # Features and usage:
 
-The code is well documented, for some help here is some example usage:
+The source code is well documented, for some help here is some example usage:
 
 ```swift
 
@@ -46,11 +46,11 @@ Log.print("Here is the log so far: \n\n\(Log.readAllLog())") //The "Hello this i
 
 # Who should use this Library?
 
-This library should be used by swift apps/programs that needs better pronting management compared to what swift's Foundation library provvides.
+This library should be used by Swift apps/programs that needs better printing management compared to what Swift's Foundation library provvides and that needs some logs to provvide.
 
 # Requirements
 
-This code should work for almost any platform/target that has apple's Foundation library or any equivalent one that's named the same, and that provvides the same basic types and functionalities:
+This code should work for almost any platform/target that has the Swift Foundation library or any equivalent one that's named the same, and that provvides the same basic types and functionalities.
 
 # About the project:
 
@@ -60,6 +60,21 @@ Also having this as it's own library allows for code to be updated separately an
 
 # Credits:
 
-ITzTravelInTime (Pietro Caruso) - Project creator
+ - ITzTravelInTime (Pietro Caruso) - Project creator
+
+# Contacts:
+
+ - ITzTravelInTime (Pietro Caruso): piecaruso97@gmail.com
+
+# Copyright
+
+Copyright (C) 2021 Pietro Caruso
+
+This library is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation; either version 2.1 of the License, or (at your option) any later version.
+
+This library is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License along with this library; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+
 
 
