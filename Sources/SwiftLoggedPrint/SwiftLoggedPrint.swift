@@ -48,7 +48,7 @@ open class LoggedPrinter: LoggedPrinterProtocol{
     
     public static var logsDebugLines: Bool = true
     
-    public static var showPrefixesIntoLoggedLines: Bool = false
+    public static var showPrefixesIntoLoggedLines: Bool = true
     
     public static var readLoggedLinesFromAllPrinters: Bool = true
     

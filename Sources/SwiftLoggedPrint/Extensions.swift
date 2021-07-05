@@ -36,10 +36,12 @@ public extension LoggedPrinterProtocol{
         }
     }
     
+    ///Prints a messange and marks it as debug
     static func debug( _ str: String){
         print(str, isDebug: true)
     }
     
+    ///Returns the ammount of logged lines stored
     static var numberOfLoggedLines: Int{
         return LogMemory.logs.count
     }
