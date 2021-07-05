@@ -10,6 +10,13 @@ import Foundation
 
 
 public protocol LoggedPrinterProtocol {
+
+    ///The prefix to be used on printed messanges
+    static var prefix: String { get }
+    
+    ///The additional prefix to be used for debug prints
+    static var debugPrefix: String { get }
+    
     ///Sets if printing is enabled or not
     static var enabled: Bool { get }
     
@@ -44,16 +51,6 @@ fileprivate struct LogMemory{
 //open class LoggedPrinter {
 
 public extension LoggedPrinterProtocol{
-    
-    ///The prefix to be used on printed messanges
-    static var prefix: String{
-        return ""
-    }
-    
-    ///The additional prefix to be used for debug prints
-    static var debugPrefix: String{
-        return "[Debug]"
-    }
     
     ///Prints somethings to the console and the log (if enabled) ether as normal log messanges or debug log messanges
     static func print( _ str: String, isDebug: Bool = false){
@@ -134,6 +131,16 @@ public extension LoggedPrinterProtocol{
 open class LoggedPrinter: LoggedPrinterProtocol{
     
     public typealias LogLine = LoggedLine
+    
+    ///The prefix to be used on printed messanges
+    open class var prefix: String{
+        return ""
+    }
+    
+    ///The additional prefix to be used for debug prints
+    open class var debugPrefix: String{
+        return "[Debug]"
+    }
     
     public static var enabled: Bool = true
     
