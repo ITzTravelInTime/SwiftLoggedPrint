@@ -34,6 +34,9 @@ public protocol LoggedPrinterProtocol {
     
     ///Sets if debug prints should be memorised into the log
     static var logsDebugLines: Bool { get }
+    
+    ///Sets if prefixes should be visible into the logged messanges
+    static var showPrefixesIntoLoggedLines: Bool { get }
 }
 
 ///Struct used to represent logged print lines
@@ -61,7 +64,7 @@ public extension LoggedPrinterProtocol{
             }
             if allowsLogging && (!isDebug || (isDebug && logsDebugLines)) {
                 LogMemory.unreadedLogLines += 1
-                LogMemory.logs.append(LoggedLine(line: str, isDebug: false))
+                LogMemory.logs.append(LoggedLine(line: showPrefixesIntoLoggedLines ? line : str, isDebug: isDebug))
             }
         }
     }
@@ -153,5 +156,7 @@ open class LoggedPrinter: LoggedPrinterProtocol{
     public static var printDebugLines: Bool = true
     
     public static var logsDebugLines: Bool = true
+    
+    public static var showPrefixesIntoLoggedLines: Bool = false
     
 }
