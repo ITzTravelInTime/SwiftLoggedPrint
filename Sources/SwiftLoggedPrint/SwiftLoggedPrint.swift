@@ -60,7 +60,7 @@ public extension LoggedPrinterProtocol{
         if enabled{
             let line = "\(prefix)\(debugPrefix.isEmpty ? "" : " \(debugPrefix)") \(str)"
             if (printDebugLines && isDebug) || !isDebug{
-                print(line)
+                Swift.print(line)
             }
             if allowsLogging && (!isDebug || (isDebug && logsDebugLines)) {
                 LogMemory.unreadedLogLines += 1
