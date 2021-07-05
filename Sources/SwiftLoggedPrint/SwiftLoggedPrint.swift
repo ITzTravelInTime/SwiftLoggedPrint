@@ -58,13 +58,13 @@ public extension LoggedPrinterProtocol{
     ///Prints somethings to the console and the log (if enabled) ether as normal log messanges or debug log messanges
     static func print( _ str: String, isDebug: Bool = false){
         if enabled{
-            let line = "\(prefix)\(debugPrefix.isEmpty ? "" : " \(debugPrefix)") \(str)"
+            let line = "\(prefix)\(!isDebug ? "" : " \(debugPrefix)") \(str)"
             if (printDebugLines && isDebug) || !isDebug{
                 Swift.print(line)
             }
             if allowsLogging && (!isDebug || (isDebug && logsDebugLines)) {
                 LogMemory.unreadedLogLines += 1
-                LogMemory.logs.append(LoggedLine(line: line, isDebug: false))
+                LogMemory.logs.append(LoggedLine(line: str, isDebug: false))
             }
         }
     }
