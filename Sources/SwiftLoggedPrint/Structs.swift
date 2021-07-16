@@ -11,11 +11,21 @@ import Foundation
 public struct LoggedLine: Equatable, Codable{
     public let line: String
     public let isDebug: Bool
-    public let id: String
+    public let printerID: String
+    public let printTime: Date?
+}
+
+public struct DefaultLogMemory: LoggedPrintStorage{
+    //this code manages the print logging system
+    public var logs: [LoggedLine] = []
+    public var unreadedLogLines: Int = 0
 }
 
 ///Class used to provvide a default way of using the logged printer
 open class LoggedPrinter: LoggedPrinterProtocol{
+    
+    
+   
     
     public typealias LogLine = LoggedLine
     
@@ -33,7 +43,7 @@ open class LoggedPrinter: LoggedPrinterProtocol{
     }
     
     open class var printerID: String{
-        return "LoggedPrinter"
+        return Bundle.main.bundleIdentifier ?? "SwiftLoggedPrintDefault"
     }
     
     public static var enabled: Bool = true
@@ -51,5 +61,13 @@ open class LoggedPrinter: LoggedPrinterProtocol{
     public static var showPrefixesIntoLoggedLines: Bool = true
     
     public static var readLoggedLinesFromAllPrinters: Bool = true
+    
+    public static var putPrefixOnAllLines: Bool = true
+    
+    public static var trackPrintTime: Bool = false
+    
+    public static var displayPrintTime: Bool = false
+    
+    public static var storage: LoggedPrintStorage = DefaultLogMemory()
     
 }

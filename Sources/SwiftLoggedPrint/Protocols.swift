@@ -7,6 +7,13 @@
 
 import Foundation
 
+public protocol LoggedPrintStorage{
+    ///The archived logged prints
+    var logs: [LoggedLine] { get set }
+    ///The unreaded logged prints
+    var unreadedLogLines: Int { get set }
+}
+
 public protocol LoggedPrinterProtocol {
 
     ///The prefix to be used on printed messanges
@@ -41,4 +48,18 @@ public protocol LoggedPrinterProtocol {
     
     ///Sets if logs from the read functions should print logs for all printers or just this one
     static var readLoggedLinesFromAllPrinters: Bool { get }
+    
+    ///Sets if the prefix should be present at each new line of the printented messanges or just at the beginning of each messange
+    static var putPrefixOnAllLines: Bool { get }
+    
+    ///Sets if the logged prints should keep track of the time they were sent
+    static var trackPrintTime: Bool { get }
+    
+    ///Sets if the time in which a print has been done should be displayed when reading the stored log and printing
+    static var displayPrintTime: Bool { get }
+    
+    ///This is the storage for the logged print lines
+    static var storage: LoggedPrintStorage { get set }
 }
+
+
