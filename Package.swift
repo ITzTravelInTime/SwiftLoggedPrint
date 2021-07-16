@@ -7,7 +7,7 @@ let package = Package(
     name: "SwiftLoggedPrint",
     platforms: [
         .macOS("10.9"),
-        .iOS("7.0")
+        .iOS("8.0")
     ],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
