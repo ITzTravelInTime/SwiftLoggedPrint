@@ -130,7 +130,7 @@ public extension LoggedPrinterProtocol{
         
         let now: Date? = displayPrintTime ? Date() : nil
         
-        let prefix = (displayPrintTime ? "[\(now!.getTimeString())] " : "") + "\(prefix)" + (isDebug ? " \(debugPrefix)" : "")
+        let prefix = (displayPrintTime ? "[\(now!.getTimeString())] " : "") + "\(self.prefix)" + (isDebug ? " \(debugPrefix)" : "")
         
         var line = ""
         
