@@ -31,7 +31,7 @@ Log.print("This should not print and not be visible in the log")
 
 Log.enabled = true
 Log.allowsLogging = true
-
+    
 }
 
 Log.readLoggedDebugLines = false
@@ -43,3 +43,8 @@ Log.readLoggedDebugLines = true
 print(" ---- Here is the log so far [with debug lines]: \n\n\(Log.readAllLog() ?? "")")
 
 print(" ---- Here is the RAW log so far: \n\n\(Log.getCompleteLog().json(prettyPrinted: true) ?? "")")
+
+
+//Test
+Log.putPrefixOnAllLines = true
+Log.print(" Test:\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \r \r \r \n \r \n \n \n \n Test")

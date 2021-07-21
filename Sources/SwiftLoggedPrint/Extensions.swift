@@ -136,7 +136,9 @@ public extension LoggedPrinterProtocol{
         
         if putPrefixOnAllLines{
             for l in str.split(separator: "\n"){
-                line += "\(prefix) \(l)\n"
+                for ll in l.split(separator: "\r"){
+                    line += "\(prefix) \(ll)\n"
+                }
             }
             
             if line.last == "\n"{
