@@ -118,6 +118,39 @@ public extension Decodable{
             return nil
         }
     }
+    
+    private init?(fromFilePath path: String, isJson: Bool) {
+        do{
+            guard let tempData = try String(data: Data(contentsOf: URL(fileURLWithPath: path ) ), encoding: .utf8) else{
+                return nil
+            }
+            
+            if isJson{
+                self.init(fromJSONSerialisedString: tempData)
+            }else{
+                self.init(fromPlistSerialisedString: tempData)
+            }
+            
+        }catch{
+            return nil
+        }
+    }
+    
+    init?(fromJSONFilePath path: String){
+        self.init(fromFilePath: path, isJson: true)
+    }
+    
+    init?(fromJSONFileUrl url: URL) {
+        self.init(fromFilePath: url.path, isJson: true)
+    }
+    
+    init?(fromPlistFilePath path: String) {
+        self.init(fromFilePath: path, isJson: false)
+    }
+    
+    init?(fromPlistFileUrl url: URL) {
+        self.init(fromFilePath: url.path, isJson: false)
+    }
 }
 
 public extension LoggedPrinterProtocol{
