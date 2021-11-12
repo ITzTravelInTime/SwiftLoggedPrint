@@ -208,26 +208,26 @@ public extension LoggedPrinterProtocol{
         }
         
         var ret = ""
+        var line: LoggedLine = .init(line: "", isDebug: false, printerID: "", printTime: nil) //initialized as non-nil to avoid crashes.
         
         for i in start...finish{
             
+            //redundant check to make sure this doesn't happen while the log changes.
             if i >= storage.logs.count{
                 return ret.isEmpty ? nil : ret
             }
             
-            if !readLoggedLinesFromAllPrinters{
-                if storage.logs[i].printerID != printerID{
-                    continue
-                }
+            line = storage.logs[i]
+            
+            if !readLoggedLinesFromAllPrinters && line.printerID != printerID{
+                continue
             }
             
-            if !readLoggedDebugLines{
-                if storage.logs[i].isDebug{
-                    continue
-                }
+            if !readLoggedDebugLines && line.isDebug{
+                continue
             }
             
-            ret += storage.logs[i].line + "\n"
+            ret += line.line + "\n"
         }
         
         return ret
