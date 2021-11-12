@@ -210,6 +210,11 @@ public extension LoggedPrinterProtocol{
         var ret = ""
         
         for i in start...finish{
+            
+            if i >= storage.logs.count{
+                return ret.isEmpty ? nil : ret
+            }
+            
             if !readLoggedLinesFromAllPrinters{
                 if storage.logs[i].printerID != printerID{
                     continue
