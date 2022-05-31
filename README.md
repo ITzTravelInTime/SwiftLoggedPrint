@@ -2,7 +2,7 @@
 
 Swift Library for better prints and to log prints.
 
-# Usage
+## Usage
 
 The source code is well documented, for some help here is some example usage:
 
@@ -58,32 +58,35 @@ print(" ---- Here is the RAW log so far: \n\n\(Log.getCompleteLog().json(prettyP
 
 ```
 
-# Who should use this Library?
+## Who should use this Library?
 
 This library should be used by Swift apps/programs that needs better printing management compared to what Swift's Foundation library provvides and that needs some logs to provvide.
 
-# Requirements
+## Requirements
 
 This code should work for almost any platform/target that has the Swift Foundation library or any equivalent one that's named the same, and that provvides the same basic types and functionalities.
 
-# About the project
+## About the project
 
 This code was created as part of my TINU project (https://github.com/ITzTravelInTime/TINU) and has been separated and made into it's own library to make the main project's source less complex and more focused on it's aim. 
 
 Also having this as it's own library allows for code to be updated separately and so various versions of the main TINU app will be able to be compiled all with the latest version of this library.
+## Libraries used
 
-# Credits
+- [ITzTravelInTime/SwiftPackagesBase](https://github.com/ITzTravelInTime/SwiftPackagesBase)
+
+## Credits
 
  - ITzTravelInTime (Pietro Caruso) - Project creator
 
-# Contacts
+## Contacts
 
  - ITzTravelInTime (Pietro Caruso): piecaruso97@gmail.com
 
-# Legal info
+## Legal info
 
 SwiftLoggedPrint: A library for logging and keeping track of prints and debug prints.
-Copyright (C) 2021 Pietro Caruso
+Copyright (C) 2021-2022 Pietro Caruso
 
 This library is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation; either version 2.1 of the License, or (at your option) any later version.
 
