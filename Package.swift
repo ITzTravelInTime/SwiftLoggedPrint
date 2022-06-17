@@ -7,7 +7,7 @@ let package = Package(
     name: "SwiftLoggedPrint",
     platforms: [
         .macOS("10.9"),
-        .iOS("8.0")
+        .iOS("7.0")
     ],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
@@ -18,7 +18,7 @@ let package = Package(
     dependencies: [
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
-        .package(url: "https://github.com/ITzTravelInTime/SwiftPackagesBase", from: "0.0.6")
+        .package(url: "https://github.com/ITzTravelInTime/SwiftPackagesBase", from: "0.0.14")
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.

@@ -22,7 +22,15 @@ public extension LoggedPrinterProtocol{
         
         let now: Date? = displayPrintTime ? Date() : nil
         
-        let prefix = (displayPrintTime ? "[\(now!.getTimeString())] " : "") + "\(self.prefix)" + (isDebug ? " \(debugPrefix)" : "")
+        var prefix: String = ""
+        
+        if #available(iOS 8.0, *) {
+            prefix += (displayPrintTime ? "[\(now?.getTimeString() ?? "")] " : "")
+        } else {
+            prefix += now?.timeIntervalSinceReferenceDate.stringValue() ?? ""
+        }
+        
+        prefix += "\(self.prefix)" + (isDebug ? " \(debugPrefix)" : "")
         
         var line = ""
         
